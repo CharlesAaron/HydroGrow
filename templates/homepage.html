@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics: Homepage</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+</head>
+<body>
+    <header>
+       <h1>HydroGrow</h1>
+        <nav>
+            <ul>
+				<li><a href="{{ url_for('homepage') }}" id="highlighted">Homepage</a></li>
+				<li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+				<li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+				<li class="dropdown">
+                    <span>Profile</span>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('profile') }}">View Profile</a>
+                        <a href="{{ url_for('Login') }}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+	
+	<div class="container">
+		<h2>HydroGrow</h2>
+	</div>
+	
+	<div class="container2">
+		<div class="description">
+			<h3>Welcome to HydroGrow - Your Hydroponic Oasis!</h3>
+			<p>Dive into the future of hydroponics with HydroGrow,
+			<br>your go-to destination for real-time monitoring of
+			<br>environmental parameters.Our platform is designed
+			<br>to empower growers of all levels with precise insights
+			<br>into their hydroponic systems, ensuring optimal
+			<br>conditions for plant growth and bountiful harvests.</p>
+		</div>
+	
+		<div class="hydroponics">
+			<h2>What is Hydroponics?</h2>
+			<p>Hydroponics is a method of growing plants without soil,
+			<br>where nutrient-rich water is used to deliver essential
+			<br>nutrients directly to the plant roots. In traditional
+			<br>soil-based cultivation, plants obtain nutrients from
+			<br>the soil, but in hydroponics, the soil is replaced with
+			<br>a soilless growing medium, and the necessary nutrients
+			<br>are dissolved in water.</p>
+		</div>
+	</div>
+	
+	<div class="cont4">
+	<h4>Mission</h4>
+	<p>At HydroGrow, our mission is to revolutionize the way people grow by providing innovative solutions and resources for successful hydroponic gardening.
+	We are committed to empowering individuals and communities to cultivate fresh, sustainable, and nutritious produce through accessible and efficient hydroponic techniques.
+	By fostering a vibrant and supportive online community, we strive to inspire and educate growers of all levels, contributing to a greener and healthier future for generations to come.</p>
+	</div>
+	
+	<div class="cont5">
+	<h4>Vision</h4>
+	<p>Our vision at HydroGrow is to be the leading online platform for hydroponic enthusiasts worldwide, offering cutting-edge technology, comprehensive resources, and a vibrant community hub.
+	We envision a future where hydroponic gardening is embraced as a mainstream practice, empowering individuals to grow their own fresh, nutrient-rich produce in any environment.
+	Through continuous innovation, collaboration, and education, we aim to cultivate a global movement towards sustainable agriculture and healthier living.</p>
+	</div>
+	
+	<div class="container3">
+		<h2>Our Team</h2>
+		<ul>
+			<li>
+			<img src="{{ url_for('static', filename='images/jb.jpg') }}">
+			<h4>Jaby R. Almadin</h4>
+			</li>
+			
+			<li>
+			<img src ="{{ url_for('static', filename='images/raf.jpg') }}">
+			<h4>Rafael Luis M. Amoranto</h4>
+			</li>
+			
+			<li>
+			<img src ="{{ url_for('static', filename='images/dy.jpg') }}">
+			<h4>Euryk Matthew C. Dy</h4>
+			</li>
+			
+			<li>
+			<img src ="{{ url_for('static', filename='images/charles.jpg') }}">
+			<h4>Charles Aaron B. Cayabyab</h4>
+			</li>
+			
+			<li>
+			<img src ="{{ url_for('static', filename='images/rose.jpg') }}">
+			<h4>Rose Joy Balonzo</h4>
+			</li>
+		</ul>
+	</div>
+	
+    <footer>
+        <p>&copy; 2024 Hydroponics Website. All rights reserved.</p>
+    </footer>
+	
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics - Sign Up</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+    <div class="container"  id="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" onsubmit="return validateForm()" method="post" action="{{ url_for('signup') }}">
+            <label for="signup-name">Full Name:</label>
+            <input type="text" id="signup-name" name="signup-name" required>
+
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="signup-email" required>
+
+            <label for="signup-birthday">Birthday:</label>
+            <input type="date" id="signup-birthday" name="signup-birthday" required>
+
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" name="signup-username" required>
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="signup-password" required>
+
+            <label for="signup-confirm-password">Confirm Password:</label>
+            <input type="password" id="signup-confirm-password" name="signup-confirm-password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="switch">
+            <p>Already have an account? <a href="{{ url_for('Login') }}">Login</a></p>
+        </div>
+
+             <div class="icon">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        document.getElementById('switch-to-signup').addEventListener('click', function () {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'block';
+        });
+
+        document.getElementById('switch-to-login').addEventListener('click', function () {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('signup-container').style.display = 'none';
+        });
+        function validateForm() {
+            var password = document.getElementsByName("signup-password")[0].value;
+            var confirmPassword = document.getElementsByName("signup-confirm-password")[0].value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

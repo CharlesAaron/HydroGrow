@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHydroFarm Settings</title>
+		
+</head>
+<body>
+	<a href="{{ url_for('Login') }}">Go to Login</a>
+    <div class="container">
+        <h1>SmartHydroFarm Settings</h1>
+        
+    <form id="settings-form" action="/set_dummy_data" method="post">
+		<label for="temperature-input">Temperature:</label>
+		<input type="text" id="temperature-input" name="temperature" placeholder="Enter temperature">
+
+		<label for="humidity-input">Humidity:</label>
+		<input type="text" id="humidity-input" name="humidity" placeholder="Enter humidity">
+
+		<label for="ph-input">pH:</label>
+		<input type="text" id="ph-input" name="ph" placeholder="Enter pH">
+		
+		<label for="water-input">Water Level:</label>
+		<input type="text" id="water-input" name="water" placeholder="Enter water">
+		
+		<label for="nutrient-input">Nutrient Level:</label>
+		<input type="text" id="nutrient-input" name="nutrient" placeholder="Enter nutrient level">
+		
+	
+		<button id="setDummyDataButton" type="button" onclick="setDummyData()">Set Dummy Data</button>
+
+	</form>
+
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

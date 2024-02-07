@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics: Profile</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <header>
+        <h1>HydroGrow</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+               <li class="dropdown">
+                    <span id="highlighted">Profile</span>
+                    <div class="dropdown-content">
+                         <a href="{{ url_for('Login') }}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+	
+	<div class="container">
+    <h2>User Profile</h2>
+    <p><strong>Username:</strong> {{ user_data['uname'] }}</p>
+    <p><strong>Full Name:</strong> {{ user_data['fname'] }}</p>
+    <p><strong>Birthday:</strong> {{ user_data['birthday'] }}</p>
+    <p><strong>Email:</strong> {{ user_data['email'] }}</p>
+	</div>
+
+    <footer>
+        <p>&copy; 2024 Hydroponics Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

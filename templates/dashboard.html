@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics: Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+     <header>
+        <h1>HydroGrow</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="Dashboard.html" id="highlighted">Dashboard</a></li>
+                <li class="dropdown">
+                    <span>Profile</span>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('profile') }}">View Profile</a>
+                        <a href="{{ url_for('Login') }}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+    <h2>Sensor Dashboard</h2>
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label for="startTime">Start Time:</label>
+    <input type="time" id="startTime" name="startTime">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
+
+    <label for="endTime">End Time:</label>
+    <input type="time" id="endTime" name="endTime">
+
+    <button id="loadButton" type="button" >Load Data</button>
+
+    <!-- Your line chart divs remain unchanged -->
+    <div id="lineChart" style="width: 100%; height: 400px;"></div>
+	
+	
+	 <div id="warningContainer">
+	
+	 </div>
+
+</div>
+
+    <footer>
+        <p>&copy; 2024 Hydroponics Website. All rights reserved.</p>
+    </footer>
+
+   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
